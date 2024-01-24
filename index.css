@@ -1,0 +1,834 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:"Be Vietnam Pro", sans-serif;
+    scroll-behavior: smooth; 
+    
+}
+
+#wrapper{
+    height:100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container{
+    max-width:1200px;
+    margin:0 auto;
+   
+    
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.logo {
+  width: 70px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: baseline;
+ 
+}
+
+.logo-text {
+  
+  margin-left:-1.2rem;
+  font-size: 28px;
+}
+
+.nav-items div {
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-items div:hover {
+  transition: 0.8s;
+  font-weight: bold;
+}
+
+@media (max-width: 450px) {
+  .lastname {
+      display: none;
+  }
+}
+
+
+.hero-section{
+    position:relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    gap:5rem;
+
+    margin:4rem auto;
+    padding:0 1rem;
+    padding-bottom: 8rem;
+
+}
+
+.faded-text{
+    position:absolute;
+    user-select:none;
+    font-size:7em ;
+    color:rgb(231,231,231);
+
+    bottom:-16%;
+    left:-2%;
+    font-weight:small;
+    transition:all 3s;
+    width:10%;
+  
+
+}
+.hero-section-left{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:2rem;
+    
+}
+
+.hero-section-heading{
+    font-size:35px;
+    color:#343d68;
+    font-weight:500;
+    
+}
+
+.role{
+    color:#4e45d5;
+    font-weight:800;
+}
+
+.hero-section-sub-heading{
+    font-size:45px;
+    line-height:45px
+}
+
+.hero-section-description{
+    margin-top:1rem;
+    width:70%;
+    font-weight:500;
+    
+}
+
+@media(max-width:800px){
+    .hero-section-description{
+        margin:14%; 
+        display: flex;
+        text-align: justify;
+        justify-content: center;
+        align-items: center;
+    }
+
+   
+
+}
+
+@media(max-width:800px){
+    .hero-section-description{
+        margin:14%; 
+        display: flex;
+        /* text-align: justify; */
+        justify-content: center;
+        align-items: center;
+    }
+
+   
+
+}
+
+#btn {
+    background-color: #e84949;
+    width: fit-content;
+    color: white;
+    padding: 0.8rem 2.3rem;
+    box-shadow: 5px 5px 7px 0px #0000003f;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.5s;
+    font-weight: 500;
+    border: solid 3px transparent;
+    position: relative;
+    z-index: 1;
+  }
+  
+  #btn::before {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.8s;
+  }
+  
+  #btn:hover::before {
+    transform: scaleX(1);
+  }
+  
+  #btn:hover {
+    border: solid 3px #e84949;
+    color: black;
+  }
+
+  @media(max-width:800px){
+     .hire-button{
+        
+        
+        margin:0 auto;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position:absolute;
+
+        
+        
+    }
+  }
+
+   .hero-section-right{
+    position:relative;  /*  relative karne ka reson hai qnki is pad bahut sari logo ko overlap karwana hai */
+  }
+
+   .absolute{
+    position:absolute;  /* absolute k through over lap hoga or iska parent non static hona jaroori hai */
+    
+  }  
+
+  .user-image{
+    border-radius:5% solid black;
+    border-radius: 1%solid white;
+    padding:2.5rem;
+    filter:grayscale(1);
+    transition:all 1s;
+    animation: scaleImage 5s linear infinite;
+  }
+
+  .user-image img{
+    z-index: -9;
+
+  }
+
+ 
+
+  @keyframes scaleImage{
+    0%{
+     filter:grayscale(0);
+     transform:scale(1);
+
+    }
+
+    50%{
+        transform:scale(1.1);
+        filter:grayscale(1);
+        box-shadow:3px 3px 10px black;
+
+
+    }
+    100%{
+        filter:grayscale(0);
+        transform:scale(1);
+    }
+  }
+
+  .icons-dot{
+   z-index:9;
+   bottom: -1rem;
+   right:0;
+   animation-name:dotsAnimation;
+   animation-duration:5s;
+   animation-iteration-count: infinite;
+
+  }
+  @keyframes dotsAnimation{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+  }
+
+  .icons-cube{
+    z-index:9;
+    top:-0.8em;
+    right:1em;
+    animation-name:cubeRotate;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+
+  }
+
+  @keyframes cubeRotate{
+    0%{
+      transform:rotateY(0deg) translateY(0px);
+    }
+    50%{
+        transform:rotateY(180deg) translateY(-12px);
+    }
+    100%{
+        transform:rotateY(360deg) translateY(0px);
+    }
+  }
+
+  .icons-circle{
+    z-index:9;
+    left:0;
+    bottom:0;
+    animation-name:shakeEffect1;
+    animation-duration:6s;
+    animation-timing-function:linear;
+    animation-iteration-count: infinite;
+
+  }
+
+  @keyframes shakeEffect1{
+    
+    50%{
+     left:5%;
+     bottom:10%;
+    }
+    
+  }
+
+  .icons-zigzag{
+    z-index:9;
+    top:1.5em;
+    left:-0.3em;
+    animation:zigzagAnimation 6s ease-in infinite;
+  }
+
+  @keyframes zigzagAnimation{
+    50%{
+        left:5%;
+        top:2%;
+    }
+  }
+
+  .icons-plus{
+    z-index:9;
+    top:-0.8rem;
+    left:50%;
+    animation:shakeEffect 6s ease-in infinite;
+  }
+
+  @keyframes shakeEffect{
+  0%{
+      top:0%;
+      bottom:0%;
+  }
+  50%{
+    top:5%;
+    bottom:4%;
+  }
+  }
+
+
+ /*  hero section responsiveness start */
+
+ @media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column-reverse; 
+        align-items: stretch;
+        gap: 1rem;
+        padding-bottom: 4rem;
+    }
+
+    .faded-text {
+        font-size: 3em;
+        bottom: -12%;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-section-left,
+    .hero-section-right {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.project-section{
+  background-color: rgb(231,231,231);
+  border-radius: 2%;
+ 
+  max-width:1200px;
+  margin:0 auto;
+  max-height:auto;
+  position:relative;
+  bottom:1.5rem;
+}
+.project-head{
+  text-align: center;
+  color:orange;
+}
+.project-description{
+  position:relative;
+  bottom:25%;
+  
+}
+
+.project-left{
+  width:50%;
+  height:399px;
+  background-color:white;
+  margin:0.5rem;
+  border-radius: 2%;
+
+ 
+}
+.project-name-description{
+  display:flex;
+  flex-direction:column;
+  padding-left:1rem;
+
+}
+
+
+.tech-used{
+  display:flex;
+  position:relative;
+  top:10%;
+  padding-left:2%;
+
+}
+.btn-project{
+  position:relative;
+  top:15%;
+ 
+  padding-left:29px;
+  color:green;
+}
+.git-link{
+ 
+  display:flex;
+  position:relative;
+  top:90px;
+  left:30px;
+  padding-left: 30px;
+  
+  border-radius: 1% solid black;
+
+  transition: all 1.5s;
+ 
+
+
+
+}
+
+.git-link:hover{
+  font-weight: 300;
+  font-size: larger;
+  transform: scale(1);
+  font-size: bold;
+
+
+ 
+  
+ 
+}
+
+.tech-logo{
+  width:100px;
+  height:70px;
+  transition:all 0.5s;
+}
+
+.tech-logo:hover{
+  transform: scale(1.2);
+}
+.project-details{
+  display:flex;
+
+}
+
+
+.project-right{
+  display:flex;
+  width:50%;
+  border-radius: 2%;
+  position:relative;
+  top: 0.5rem;
+}
+
+.img-p1{
+  height:398px;
+  width:98%;
+  border-radius:2% solid black;
+  box-shadow:0px 0px 40px #1f1f1f;
+  background-size: cover;
+}
+
+#project-amzaon{
+  
+  border-radius: 6px;
+}
+@media only screen and (max-width: 500px) {
+  .project-section{
+    max-height:1000px;
+  }
+  .project-details{
+    display: flex;
+    flex-direction: column;
+    
+    width:100%;
+    max-height:1000px;
+  }
+  .project-section {
+    height: 750px;
+    bottom: 0;
+  }
+
+  .project-left,
+  .project-right {
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 2% solid white;
+  }
+
+  .project-right {
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+
+  .img-p1 {
+    height: 240px; /* Adjust the height as needed */
+    border-radius: 2%;
+  }
+
+  .project-description {
+    bottom: 0;
+  }
+
+  .tech-used,
+  .btn-project,
+  .git-link {
+    padding-left: 10px; /* Adjust the padding as needed */
+  }
+}
+
+
+
+
+.skills-container {
+  position: relative;
+  display: flex;
+  padding: 5rem;
+  margin: 2rem auto;
+  margin-top: 20px;
+  gap: 30px;
+}
+
+.skill-top-head {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: orangered;
+}
+
+.skills-top {
+  text-align: center;
+  color: orange;
+  position: relative;
+  top: 1.5rem;
+}
+
+.skill-head {
+  font-size: 100px; 
+  color: orange;
+  position: relative;
+  top: 5px; 
+}
+
+.skill-container-left {
+  margin-top: 20px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-container-right {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  position: relative;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.skill-faded-text {
+  position: absolute;
+  font-size: 10rem;
+  font-weight: bold; /* Corrected from font-style */
+  color: rgb(231, 231, 231);
+  bottom: -22%;
+  right: -2%;
+  user-select: none;
+}
+
+.bloob-logo {
+  position: absolute;
+  max-width: 45%;
+  top: 50%;
+  left: 50%;
+  z-index: -4;
+  transform: translate(-50%, -60%);
+  animation: bloobanimate 3s linear infinite;
+}
+
+@keyframes bloobanimate {
+  50% {
+    top: 54%;
+    left: 56%;
+  }
+}
+
+.skill-logo {
+  width: 110px;
+  height: 80px;
+  transition: all 0.5s;
+}
+
+.skill-logo:hover {
+  transform: scale(1.2);
+}
+
+.skill-heading {
+  font-size: 50px;
+  font-weight: bold;
+  color: orange;
+  line-height: 50px;
+}
+
+.skill-subheading {
+  margin-top: 2rem;
+  max-width: 85%;
+  text-align: justify;
+}
+
+/* Skill Response */
+
+@media (max-width: 768px) {
+  #skills {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skill-faded-text {
+    display: none;
+  }
+
+  .skill-container-left {
+    width: 100%;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .skill-container-right {
+    width: 100%;
+    display: flex;
+  }
+}
+
+@media (max-width: 450px) {
+  #skills {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skill-faded-text {
+    display: none;
+  }
+}
+
+
+
+
+
+/* CSS for contact us form */
+
+
+
+.contact-container {
+  background-color: rgb(231, 231, 231);
+  width: 90%;
+  margin: 2.5rem auto;
+}
+
+.contactus-container {
+  padding-top: 10px;
+}
+
+.contact-heading {
+  font-size: 4em;
+  color: orange;
+  padding: 2rem;
+  text-align: center;
+}
+
+.contact-subheading {
+  font-size: 2rem;
+  color: blue;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.container-form {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 70%;
+  margin: 2rem auto;
+}
+
+.form-field-container {
+  width: 100%;
+}
+
+.formfield {
+  width: 100%;
+  height: 42px;
+  padding: 0 2rem;
+  font-size: 18px;
+  box-shadow: 2px 2px 10px #1f1f1f;
+  font-weight: 500;
+  border: none;
+  border-radius: 1%;
+  margin: 17px 0;
+}
+
+.btn-submit{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.button {
+  border: none;
+  font-size: 1.4rem;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button:hover {
+  transform: scale(0.9);
+}
+
+.submit-icon {
+  padding: 0 1rem;
+  font-size: 1.5rem;
+  
+}
+
+::placeholder {
+  color: gray;
+  font-weight: 500;
+  padding-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width:500px){
+  .contact-heading ,.contact-subheading{
+     font-size: large;
+  }
+}
+
+
+/* Css for Footer Section */
+
+
+footer {
+  position: relative;
+  margin-top: 2.5rem;
+  background-color: #343d68;
+  padding: 5rem;
+}
+
+.footer-wrapper {
+  display: flex;
+  gap: 1rem;
+  padding: 1.2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-faded {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: #535c87;
+  user-select: none;
+  font-size: 5em;
+}
+
+.link-wrapper {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.link-wrapper div a {
+  color: white;
+  text-decoration: none;
+}
+
+.link-wrapper div:hover {
+  color: orange;
+  cursor: pointer;
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  cursor: pointer;
+  gap: 1.2rem;
+}
+
+
+
